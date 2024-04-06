@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W10 Pizza Stats</title>
+<link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <!-- This is the page title, there should only be 1 h1 on a page -->
+<h1> Pizza Chef Stats</h1>
+
+<p>
+    Total Pizzas Baked: <span id="totalPizzas">0</span>
+</p>
+<p>
+    Baking Level: <span id="bakinglevel"></span>
+</p>
+
+<label for="newPizzas">New Pizzas Baked: </label>
+<input type="number" id="newPizzas" name="newPizzas" min="0" max="1000" value="0">
+
+<button onclick="updatePizzaStats();">Update Stats</button>
+
+<p>
+    Available Toppings: <span id="Toppings"></span>
+</p>
+
+<script>
+    // this function runs when the button on our page is clicked
+function updatePizzaStats(){
+//    this is the number of pizzas that the user entered in the text box
+    var newPizzasInput = parseInt(document.getElementById("newPizzas").value);
+
+// set up a pointer to the total pizzas baked
+var totalPizzasSpan = document.getElementById("totalPizzas");
+
+// set up a pointer to the baking level span
+var bakingLevelSpan = document.getElementById("bakinglevel");
+
+// create a variable to hold the return value from calculateTotalPizzas
+var totalPizzas = calculateTotalPizzas(newPizzasInput);
+
+// update the total pizzas span
+totalPizzasSpan.innerText = totalPizzas;
+
+// get the pizza che status
+bakingLevelSpan.innerText = updateChefsStats(totalPizzas);
+}
+
+// function to calculate the total pizzas baked
+function calculateTotalPizzas(newPizzas){
+// get the current number of pizzas that have been baked
+var currentPizzas = parseInt(document.getElementById("totalPizzas").innerText);
+
+var totalPizzas = currentPizzas + newPizzas;
+
+
+return totalPizzas;
+}
+
+// create a function to determine the chef's baking level depending on the total pizzas baked
+function updateChefsStats(totalNumPizzas){
+if(totalNumPizzas >= 100){
+    return "Extraordinary Chef";
+}
+else if (totalNumPizzas >= 50){
+    return "Exper Chef";
+}
+else if (totalNumPizzas >=20){
+    return "Skilled Chef";
+}
+else{
+    return "Beginner Chef";
+}
+}
+
+var topping1 = "Pepperoni";
+var topping2 = "Mushrooms";
+var topping3 = "Onions";
+var topping4 = "Sausage";
+var topping5 = "Peppers";
+
+document.getElementById("Toppings").innerText = topping1 + ", " + topping2 + ", " + topping3 + ", " + topping4 + ", " + topping5;
+</script>
+</body>
+</html>
