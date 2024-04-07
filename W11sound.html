@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W11 Sound</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Set background color */
+            font-family: Arial, sans-serif; /* Set font family */
+            text-align: center; /* Center align text */
+        }
+        h1 {
+            color: #333; /* Set heading color */
+        }
+        .container {
+            margin-top: 50px; /* Add space from the top */
+        }
+        button {
+            background-color: #4CAF50; /* Set button background color */
+            color: white; /* Set button text color */
+            padding: 15px 20px; /* Set button padding */
+            font-size: 16px; /* Set button font size */
+            border: none; /* Remove button border */
+            cursor: pointer; /* Add cursor pointer on hover */
+            border-radius: 5px; /* Add border radius */
+        }
+        button:hover {
+            background-color: #45a049; /* Change button color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Click the Button to Play Sound</h1>
+        <button onclick="playSound()">Play Sound</button> <!-- Button to play sound -->
+    </div>
+
+    <script>
+        // Function to play sound
+        function playSound() {
+            var sound = new Audio('sound.mp3'); // Create audio element with sound file
+            sound.play(); // Play the sound
+        }
+    </script>
+</body>
+</html>
