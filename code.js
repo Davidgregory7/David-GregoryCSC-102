@@ -96,3 +96,41 @@ function rollDie(){
     }
     
     }
+    
+
+    // Programming Concepts
+    // JavaScript file for interactive functionality
+
+// Function to demonstrate decision logic (if/else)
+function demonstrateDecisionLogic(number) {
+    // Checking if the number is greater than 10
+    if (number > 10) {
+        return "Number is greater than 10";
+    } else {
+        return "Number is not greater than 10";
+    }
+}
+
+// Function to demonstrate loops
+function demonstrateLoops() {
+    // Looping from 1 to 5 and logging each number
+    for (let i = 1; i <= 5; i++) {
+        console.log(i);
+    }
+}
+
+// Function to demonstrate string manipulation and validation
+function demonstrateStringManipulation(string) {
+    // Checking if the string is empty
+    if (string.trim() === "") {
+        return "String is empty";
+    } else {
+        // Reversing the string
+        return string.split("").reverse().join("");
+    }
+}
+
+// Calling functions to demonstrate programming concepts
+console.log(demonstrateDecisionLogic(15));
+demonstrateLoops();
+console.log(demonstrateStringManipulation("hello"));
