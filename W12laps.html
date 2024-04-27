@@ -4,35 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programming Concepts</title>
-    <!-- Linking external CSS file for styling -->
-    <link rel="stylesheet" href="main.css">
+    <title>W12 Lap Recorder</title>
+<link rel="stylesheet" href="main.css">
+<script src="code.js"></script>
 </head>
 <body>
     <header>
-        <h1>Explore Programming Concepts</h1>
-    </header>
-    <main>
-        <!-- Adding a paragraph with some introductory text -->
-        <p>Welcome to our page! Here, you can learn about various programming concepts.</p>
-        <!-- Adding a section for programming concepts -->
-        <section id="concepts">
-            <h2>Programming Concepts</h2>
-            <!-- Adding a list of programming concepts -->
-            <ul>
-                <!-- Decision logic (if/else) -->
-                <li><strong>Decision Logic (if/else):</strong> Used to make decisions based on conditions.</li>
-                <!-- Loops -->
-                <li><strong>Loops:</strong> Used to repeat a block of code until a condition is met.</li>
-                <!-- String manipulation and validation -->
-                <li><strong>String Manipulation and Validation:</strong> Manipulating and validating strings to ensure data integrity.</li>
-            </ul>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Programming Concepts</p>
-    </footer>
-    <!-- Linking external JavaScript file -->
-    <script src="code.js"></script>
+        <!-- This is the page title -->
+        <h1>Lap Recorder JavaScript practice</h1>
+    
+    <!-- use this div to display information or error messages to the user -->
+        <div id="messageDiv"></div>
+    
+        <!-- When clicked, this button will record a lap time -->
+   <button onclick="recordLap();">Record Lap</button>
+    
+   <!-- When clicked, this button will show any recorded lp times -->
+<button onclick="displayLaps();">Display Lap Times</button>
+
+<!-- This div will show the lap times that have been recorded by the first button-->
+<div id="lapsDiv"></div>
+
 </body>
 </html>

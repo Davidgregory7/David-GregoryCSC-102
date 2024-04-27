@@ -98,39 +98,66 @@ function rollDie(){
     }
     
 
-    // Programming Concepts
-    // JavaScript file for interactive functionality
+//    Week 12 Lap time recorder
+ // this variable will keep track of the current lap
+        // as we add laps, the value will be increased by 1
+        var lapCounter = 0;
+     
+    //  set up an empty array that will hold the lap times
+    var lapsArray = [];
+     
+    //  this function will record a lap - add a lap to the lapsArray each time the button is clicked
+     function recordLap(){
+    // use .push to add an item to the end of the array
+    // new Date() will add the current date and time to the array
+    lapsArray.push(new Date());
 
-// Function to demonstrate decision logic (if/else)
-function demonstrateDecisionLogic(number) {
-    // Checking if the number is greater than 10
-    if (number > 10) {
-        return "Number is greater than 10";
-    } else {
-        return "Number is not greater than 10";
-    }
+// print out the info to the console
+console.log("Lap " + (lapCounter+1) + "recorded" + lapsArray[lapCounter]);
+
+// display a message to the user that the lap was recorded
+// create the shortcut/nickname variable that points to the message div
+var divMsg = document.getElementById("messageDiv")
+
+// display a message based on which lap is being recorded
+if (lapCounter == 0){
+
+    divMsg.innerText = "The first lap was recorded";
+}
+else if (lapCounter ==1){
+    divMsg.innerText = "The second lap was recorded";
+}
+else if (lapCounter == 2){
+    divMsg.innerText = "The third lap was recorded"
+}
+// catch all else statement - if the counter is greater than 2, print out a generic message
+else{
+    divMsg.innerText = "Lap " + (lapCounter+1) + "was recorded.";
+}
+// increase the lap counter by 1 - it is equivalent to saying lapCounter = lapCounter + 1
+lapCounter++;
 }
 
-// Function to demonstrate loops
-function demonstrateLoops() {
-    // Looping from 1 to 5 and logging each number
-    for (let i = 1; i <= 5; i++) {
-        console.log(i);
-    }
-}
+// create the function to display the lap times to the user
+      function displayLaps(){
+        // create a variable that is a pointer to the display laps div
+      var divLaps = document.getElementById("lapsDiv");
+    
+    //    create an unordered list to hold the lap times
+    var u1Laps = document.createElement("u1");
 
-// Function to demonstrate string manipulation and validation
-function demonstrateStringManipulation(string) {
-    // Checking if the string is empty
-    if (string.trim() === "") {
-        return "String is empty";
-    } else {
-        // Reversing the string
-        return string.split("").reverse().join("");
-    }
-}
+// add the unordered list to the display laps div
+divLaps.appendChild(u1Laps);
 
-// Calling functions to demonstrate programming concepts
-console.log(demonstrateDecisionLogic(15));
-demonstrateLoops();
-console.log(demonstrateStringManipulation("hello"));
+// loop through the laps array to add the lap times to the unordered list
+for (var i = 0; i < lapsArray.length; i++){
+    // create a list item that will be added to the unordered list
+var liaLap = document.createElement("li")
+
+//    add the lap time to the list item text
+liaLap.textContent = "Lap: " + (i+1) + ": " + lapsArray[i];
+
+// add the listitem to the unordered list
+u1Laps.appendChild(liaLap);
+}
+}
