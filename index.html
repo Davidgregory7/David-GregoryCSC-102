@@ -22,10 +22,19 @@ Do not include any content for the user in the head section -->
     <header>
 <!-- This is the navigation menu section -->
       <nav>
-        <!-- The a tag is the anchor tag - it creates a hyperlink -->
-    <a href="index.html">Home</a><br>
-    <a href="boards">Boards</a>
-    </nav>
+        <!-- ul is unordered list -->
+        <ul>
+   <li> <a href="index.html">Home</a><br></li>
+   <li><a href="boards">Boards</a></li>
+    <li><a href="game.html">Game</a></li>
+    <li><a href="Palindrome.html">Palindrome</a></li>
+    <li><a href="basics.html">Basics</a></li>
+    <li><a href="strings.html">strings</a></li>
+    <li><a href="W11sound.html">sound</a></li>
+    <li><a href="W13table.html">Table</Table></a></li>
+</ul>
+     
+</nav>
     </header>
 
     <!-- Add header text. There should be 1 and only 1 h1 tag on a page -->
@@ -41,8 +50,10 @@ Do not include any content for the user in the head section -->
 
 <!-- This is a paragraph, by defualt there will be spacing before and after-->
     <p>
+        <div class="center">
        <img id="Meme Image" src="1520427370250.jpeg" alt="Meme Image">
-   </p>
+    </div>
+    </p>
 
 <!-- Add the footer to the bottom of the page -->
 <footer>
@@ -56,17 +67,19 @@ Tempe, AZ 85283
 // track the interval id
 var intervalId = 0;
     // this function will make our image move around
-    function startImageMove(){
+    function startImageMove() {
 // create a variable that points to our HTML meme imagr
-    var Meme= document.getElementById("Meme Image");
+    var Meme = document.getElementById("Meme Image");
     
     
     intervalId = setInterval(function(){
         // create a variable told the new x coordinate
-    var newX = getRandomCoordinate();
+    // Limit x coordinate by window width
+        var newX = getRandomCoordinate(window.innerWidth - Meme.width);
     
  // create a variable told the new y coordinate
- var newY = getRandomCoordinate();
+//  Limit y coordinate by window height
+ var newY = getRandomCoordinate(window.innerHeight - Meme.height);
 
 // let's chnage the location of our image
 Meme.style.left = newX + "px"; 
@@ -84,9 +97,9 @@ function stopImageMove(){
 clearInterval(intervalId);
 }
 // create a function to generate our coordinate randomly
-function getRandomCoordinate(){
+function getRandomCoordinate(max){
 //    this function will return a random coordinate back to the code that called it
-    return Math.floor(Math.random() * 1000);
+    return Math.floor(Math.random() * max);
 }
 </script>
 </body>
